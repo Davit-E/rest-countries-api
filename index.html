@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>REST Countries API</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <nav class="background_without_hover box_shadow">
+    <div class="navbar">
+      <a class="navbar_brand text_color" href="index.html">Where in the World?</a>
+      <button class="cursor_pointer" id="color_mode">
+        <svg class="moon_icon" xmlns='http://www.w3.org/2000/svg' width='512' height='512' viewBox='0 0 512 512'>
+          <title>ionicons-v5-j</title>
+          <path class="svg_outline" d='M160,136c0-30.62,4.51-61.61,16-88C99.57,81.27,48,159.32,48,248c0,119.29,96.71,216,216,216,88.68,0,166.73-51.57,200-128-26.39,11.49-57.38,16-88,16C256.71,352,160,255.29,160,136Z'
+          style='fill:none;stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px' />
+        </svg>
+        <p class="dark_mode_text text_color">Dark Mode</p>
+      </button>
+    </div>
+  </nav>
+
+  <div class="main_page open">
+    <div class="filter_options">
+      <div class="search_container background_without_hover box_shadow">
+        <button class="search_buttons" id="search_country_button">
+          <svg class="search_icon" xmlns='http://www.w3.org/2000/svg' width='512' height='512' viewBox='0 0 512 512'>
+            <title>ionicons-v5-f</title>
+            <path class="svg_outline" d='M221.09,64A157.09,157.09,0,1,0,378.18,221.09,157.1,157.1,0,0,0,221.09,64Z' style='fill:none;stroke:#000;stroke-miterlimit:10;stroke-width:32px' />
+            <line class="svg_outline" x1='338.29' y1='338.29' x2='448' y2='448' style='fill:none;stroke:#000;stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px' />
+          </svg>
+        </button>
+        <input class="text_color" id="search_input" type="text" name="" value="" placeholder="Search for a country...">
+      </div>
+      <div class="filter_by_region cursor_pointer">
+        <div class="filter_button search_buttons background_color box_shadow" id="filter_button">
+          <p class="region_filter_text text_color">Filter by Region</p>
+          <div class="arrow_icon">
+            <span class='arrow_icon_line'></span>
+            <span class='arrow_icon_line'></span>
+          </div>
+        </div>
+        <div class="dropdown_background text_color">
+          <div class="dropdown-content background_without_hover box_shadow">
+            <a class="region_filter_option text_color cursor_pointer">All</a>
+            <a class="region_filter_option text_color cursor_pointer">Africa</a>
+            <a class="region_filter_option text_color cursor_pointer">Americas</a>
+            <a class="region_filter_option text_color cursor_pointer">Asia</a>
+            <a class="region_filter_option text_color cursor_pointer">Europe</a>
+            <a class="region_filter_option text_color cursor_pointer">Oceania</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="country_template">
+      <div class="country_container">
+        <div class="country_flag_container box_shadow cursor_pointer">
+          <!-- <img class="country_flag" src="" alt=""> -->
+        </div>
+        <div class="country_info background_color box_shadow text_color cursor_pointer">
+          <h3 class="country_name text_color"></h3>
+          <p class="country_population text_color">Population: <span></span></p>
+          <p class="country_region text_color">Region: <span></span></p>
+          <p class="country_capital text_color">Capital: <span></span></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="countries_container">
+
+    </div>
+
+  </div>
+  <div class="second_page">
+    <button class="back_button background_color text_color box_shadow cursor_pointer">
+      <svg class="back_icon" xmlns='http://www.w3.org/2000/svg' width='512' height='512' viewBox='0 0 512 512'>
+        <title>ionicons-v5-a</title>
+        <polyline class="svg_outline" points='244 400 100 256 244 112' style='fill:none;stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:48px' />
+        <line class="svg_outline" x1='120' y1='256' x2='412' y2='256' style='fill:none;stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:48px' />
+      </svg>
+      <p class="back_button_text">Back</p>
+    </button>
+
+    <div class="clicked_country_container">
+      <img class="clicked_country_flag box_shadow " src="" alt="">
+      <div class="clicked_country_info text_color">
+        <h3 class="clicked_country_name text_color"></h3>
+        <div class="additional_info_container">
+          <div class="additional_info info_part1">
+            <p class="country_native_name text_color">Native Name: <span></span></p>
+            <p class="country_population text_color">Population: <span></span></p>
+            <p class="country_region text_color">Region: <span></span></p>
+            <p class="country_sub_region text_color">Sub Region: <span></span></p>
+            <p class="country_capital text_color">Capital: <span></span></p>
+          </div>
+          <div class="additional_info info_part2">
+            <p class="country_top_level_domain text_color">Top Level Domain: <span></span></p>
+            <p class="country_currencies text_color">Currencies: <span></span></p>
+            <p class="country_languages text_color">Languages: <span></span></p>
+          </div>
+        </div>
+        <!-- <div class="border_countries">
+          <p class="border_countries_text">Border Countries:</p>
+          <div class="border_countries_buttons">
+            <button class="border_countrie_button background_color text_color box_shadow cursor_pointer">France</button>
+            <button class="border_countrie_button background_color text_color box_shadow cursor_pointer">Germany</button>
+            <button class="border_countrie_button background_color text_color box_shadow cursor_pointer">Neitherlands</button>
+          </div>
+        </div> -->
+      </div>
+    </div>
+  </div>
+
+
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script type="text/javascript" src="app.js"></script>
+</body>
+
+</html>
